@@ -7,10 +7,13 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Build output
 node_modules
 dist
 dist-ssr
 *.local
+.vite-ssg-dist
+.vite-ssg-temp
 
 # Editor directories and files
 .vscode/*
@@ -23,15 +26,7 @@ dist-ssr
 *.sln
 *.sw?
 
-.DS_Store
-.vite-ssg-dist
-.vite-ssg-temp
-*.local
-dist
-dist-ssr
-node_modules
-.idea/
-*.log
+# Generated files
 cypress/downloads
 public/assets/fonts
 auto-imports.d.ts
