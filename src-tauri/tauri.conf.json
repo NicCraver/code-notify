@@ -33,7 +33,6 @@
         "decorations": false,
         "transparent": false,
         "resizable": true,
-        "theme": "Dark",
         "shadow": false,
         "alwaysOnTop": true,
         "skipTaskbar": true,
