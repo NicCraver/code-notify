@@ -7,6 +7,18 @@ defineOptions({
 
 const { startAnimation, isAnimating, isAnimationComplete, animateWindow } = useWindowAnimation()
 
+// 修改iframe地址为代理页面
+const iframeUrl = ref('http://localhost:8010/BUM35sTNIQ7eUg7y')
+
+const { message } = useIframeMessage()
+
+watch(message, (newMessage) => {
+  console.log('收到消息---:', newMessage)
+  animateWindow()
+}, {
+  deep: true,
+})
+
 onMounted(async () => {
   // 确保初始化完成后再开始动画
   await setInitialWindowState()
@@ -15,7 +27,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div h-100vh w-screen flex-col>
+  <div h-100vh w-screen flex-col select-none>
     <!-- 图标区域容器 -->
     <div
       data-tauri-drag-region
@@ -48,6 +60,13 @@ onMounted(async () => {
         <p>动画状态: {{ isAnimating ? '播放中' : '已停止' }}</p>
         <p>动画完成: {{ isAnimationComplete ? '是' : '否' }}</p>
       </div>
+
+      <iframe
+        :src="iframeUrl"
+        frameborder="0"
+        class="h-full w-full"
+        sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+      />
     </div>
   </div>
 </template>
