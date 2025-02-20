@@ -17,7 +17,6 @@ import Layouts from 'vite-plugin-vue-layouts'
 import generateSitemap from 'vite-ssg-sitemap'
 import 'vitest/config'
 
-// @ts-expect-error process is a nodejs global
 // eslint-disable-next-line node/prefer-global/process
 const host = process.env.TAURI_DEV_HOST
 
