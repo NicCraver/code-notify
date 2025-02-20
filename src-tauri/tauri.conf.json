@@ -31,7 +31,7 @@
         "height": 0,
         "label": "main",
         "decorations": false,
-        "transparent": false,
+        "transparent": true,
         "resizable": true,
         "shadow": false,
         "alwaysOnTop": true,
