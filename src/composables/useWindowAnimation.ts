@@ -5,9 +5,9 @@ import { ref } from 'vue'
 // 动画配置
 const ANIMATION_DURATION = 300 // 动画持续时间（毫秒）
 const FINAL_WIDTH = 340
-const FINAL_HEIGHT = 70
+const FINAL_HEIGHT = 60
 const ANIMATION_STEPS = 30 // 动画步数
-const MARGIN_RIGHT = 20 // 距离右边缘的距离
+const MARGIN_RIGHT = 30 // 距离右边缘的距离
 
 export const isAnimating = ref(false)
 export const isAnimationComplete = ref(false)
@@ -20,7 +20,7 @@ async function calculatePositions() {
 
   const screenWidth = monitor.size.width
   const finalX = screenWidth - FINAL_WIDTH * 2 - MARGIN_RIGHT // 最终位置
-  const finalY = 100
+  const finalY = 120
 
   return {
     start: {

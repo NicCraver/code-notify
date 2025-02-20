@@ -1,5 +1,5 @@
 export function useIframeMessage() {
-  const message = ref('')
+  const message = ref<any>(null)
   // 只处理消息
   const handleMessage = (event: MessageEvent) => {
     console.log('收到消息:', event.data)
