@@ -9,17 +9,34 @@
     "beforeBuildCommand": "pnpm build",
     "frontendDist": "../dist"
   },
+  "plugins": {
+    "shell": {
+      "open": true
+    },
+    "window": {
+      "all": true
+    }
+  },
   "app": {
+    "macOSPrivateApi": true,
+    "withGlobalTauri": true,
+    "security": {
+      "csp": null,
+      "capabilities": []
+    },
     "windows": [
       {
         "title": "code-notify",
-        "width": 800,
-        "height": 600
+        "width": 600,
+        "height": 600,
+        "label": "main",
+        "decorations": false,
+        "transparent": true,
+        "resizable": true,
+        "theme": "Dark",
+        "shadow": false
       }
-    ],
-    "security": {
-      "csp": null
-    }
+    ]
   },
   "bundle": {
     "active": true,
