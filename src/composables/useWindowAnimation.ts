@@ -14,7 +14,7 @@ export async function setWindowPosition() {
     return
 
   const xPos = monitor.size.width - windowWidth * 2 - 50
-  const yPos = 100
+  const yPos = 300
 
   await window.setPosition(new PhysicalPosition(xPos, yPos))
 }
