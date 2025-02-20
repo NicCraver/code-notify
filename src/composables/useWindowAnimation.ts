@@ -3,10 +3,10 @@ import { useTimeoutFn } from '@vueuse/core'
 import { ref } from 'vue'
 
 // 动画配置
-const ANIMATION_DURATION = 500 // 动画持续时间（毫秒）
+const ANIMATION_DURATION = 300 // 动画持续时间（毫秒）
 const FINAL_WIDTH = 340
-const FINAL_HEIGHT = 200
-const ANIMATION_STEPS = 20 // 动画步数
+const FINAL_HEIGHT = 70
+const ANIMATION_STEPS = 30 // 动画步数
 const MARGIN_RIGHT = 20 // 距离右边缘的距离
 
 export const isAnimating = ref(false)
@@ -20,7 +20,7 @@ async function calculatePositions() {
 
   const screenWidth = monitor.size.width
   const finalX = screenWidth - FINAL_WIDTH * 2 - MARGIN_RIGHT // 最终位置
-  const finalY = 300
+  const finalY = 100
 
   return {
     start: {
@@ -46,7 +46,7 @@ export async function setInitialWindowState() {
   await window.setSize(new LogicalSize(FINAL_WIDTH, FINAL_HEIGHT))
 
   // 等待一小段时间确保窗口状态已更新
-  await new Promise(resolve => setTimeout(resolve, 500))
+  await new Promise(resolve => setTimeout(resolve, 100))
 }
 
 // 执行窗口动画
@@ -92,7 +92,7 @@ export async function animateWindow() {
 }
 
 // 延迟启动动画
-export function useWindowAnimation(delay = 1000) {
+export function useWindowAnimation(delay = 100) {
   const { start: startAnimation } = useTimeoutFn(() => {
     animateWindow()
   }, delay)

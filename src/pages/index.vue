@@ -27,44 +27,30 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div h-100vh w-screen flex-col select-none>
-    <!-- 图标区域容器 -->
+  <div
+    h-100vh w-screen select-none bg-red-500
+  >
+    <!-- 外层容器作为可拖动区域 -->
     <div
       data-tauri-drag-region
-      bg-red-500
-      px-3
-      py-2
-      text-4xl
-      transition-all
-      duration-100
-      hover:bg-red-600
+      h-full w-full
     >
+      <!-- 图标区域容器 -->
       <div
         data-tauri-drag-region
-        i-carbon-campsite
-        inline-block
-      />
-    </div>
-
-    <!-- 调试控制区域 -->
-    <div mt-4 px-4>
-      <button
-        :disabled="isAnimating"
-        class="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600 disabled:opacity-50"
-        @click="animateWindow"
+        w-full flex items-center px-4 py-2
       >
-        重播动画
-      </button>
-
-      <div mt-2 text-sm>
-        <p>动画状态: {{ isAnimating ? '播放中' : '已停止' }}</p>
-        <p>动画完成: {{ isAnimationComplete ? '是' : '否' }}</p>
+        <div
+          i-carbon-campsite
+          text-5xl
+          @click="animateWindow"
+        />
       </div>
 
       <iframe
         :src="iframeUrl"
         frameborder="0"
-        class="h-full w-full"
+        class="absolute h-0 w-0 opacity-0"
         sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
       />
     </div>
