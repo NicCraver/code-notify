@@ -27,15 +27,18 @@
     "windows": [
       {
         "title": "code-notify",
-        "width": 100,
-        "height": 100,
+        "width": 0,
+        "height": 0,
         "label": "main",
         "decorations": false,
         "transparent": false,
         "resizable": true,
         "theme": "Dark",
         "shadow": false,
-        "alwaysOnTop": true
+        "alwaysOnTop": true,
+        "skipTaskbar": true,
+        "acceptFirstMouse": true,
+        "focus": true
       }
     ]
   },
